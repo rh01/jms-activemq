@@ -11,7 +11,7 @@ import javax.jms.TextMessage;
  * @Author: ReadAILib
  * @create: 2018-04-09 19:29
  **/
-public class MyMessageListener implements MessageListener {
+public class MyMessageListener implements MessageListener{
     public void onMessage(Message arg0) {
         TextMessage msg = (TextMessage)arg0;
         try {

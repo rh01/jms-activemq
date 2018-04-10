@@ -17,7 +17,7 @@ public class DurableReceiver {
         // 创建连接
         Connection connection = cf.createConnection();
         // 需要在连接上设置消费者id，用来识别消费者
-        connection.setClientID("cc3");
+        connection.setClientID("cc1");
         // 创建会话
         final Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
         // 这个队列名字一定是activemq里面有的
@@ -36,7 +36,7 @@ public class DurableReceiver {
             System.out.println("收到消息：" + txtMsg.getText());
             message = consumer.receive(1000L);
         }
-        //session.commit();
+        session.commit();
 
         // 关闭连接
         session.close();

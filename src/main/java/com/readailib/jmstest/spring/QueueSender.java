@@ -23,6 +23,7 @@ public class QueueSender {
     @Autowired
     private JmsTemplate jt = null;
 
+
     public static void main(String[] args) throws Exception {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         QueueSender ct = (QueueSender) ctx.getBean("queueSender");

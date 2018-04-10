@@ -14,8 +14,8 @@ import java.util.Enumeration;
 public class QueueReceiver {
     public static void main(String[] args) throws Exception {
         // 创建工厂构造
-        ConnectionFactory cf = new ActiveMQConnectionFactory("tcp://localhost:61616");
-                //"tcp://192.168.59.150:61616");
+        ConnectionFactory cf = new ActiveMQConnectionFactory(
+                "tcp://192.168.59.150:61616");
         // 创建连接
         Connection connection = cf.createConnection();
         // 启动连接
@@ -30,7 +30,7 @@ public class QueueReceiver {
         // 创建会话
         final Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
         // 这个队列名字一定是activemq里面有的
-        Destination destination = session.createQueue("my-queue1");
+        Destination destination = session.createQueue("my-queue2");
         // 创建消费者来读取队列的数据
         MessageConsumer consumer = session.createConsumer(destination);
         int i=0;
